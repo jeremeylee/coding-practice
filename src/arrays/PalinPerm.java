@@ -1,4 +1,4 @@
-package strings.arrays;
+package arrays;
 
 public class PalinPerm {
 

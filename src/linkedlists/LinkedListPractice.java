@@ -1,3 +1,5 @@
+package linkedlists;
+
 import java.util.*;
 
 public class LinkedListPractice {
@@ -20,8 +22,8 @@ public class LinkedListPractice {
     }
     private static Node deleteDupsAlternate(Node head) {
         Node current = head;
-//        Node runner = head.next;
-//        Node previous = null;
+//        linkedlists.Node runner = head.next;
+//        linkedlists.Node previous = null;
 //        display(runner);
         while (current != null) {
             Node runner = current;

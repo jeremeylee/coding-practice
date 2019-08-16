@@ -1,3 +1,5 @@
+package strings.arrays;
+
 public class StringCompression {
 
     public static String compress(String str) {

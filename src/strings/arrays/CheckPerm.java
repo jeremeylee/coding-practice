@@ -1,3 +1,5 @@
+package strings.arrays;
+
 import java.util.Arrays;
 
 public class CheckPerm {

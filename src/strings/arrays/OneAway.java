@@ -1,3 +1,5 @@
+package strings.arrays;
+
 public class OneAway {
 
     public static boolean checkOneAway(String str1, String str2) {

@@ -1,3 +1,5 @@
+package strings.arrays;
+
 public class URLify {
 
     public static char[] convertToUrl(char[] str, int trueLength) {

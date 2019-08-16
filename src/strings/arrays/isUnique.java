@@ -1,7 +1,9 @@
+package strings.arrays;
+
 import java.util.Arrays;
 
 public class isUnique {
-    //isUnique that uses an additional data structure to check O(n)
+    //strings.arrays.isUnique that uses an additional data structure to check O(n)
     public static boolean isUniqueWithAdditionalDS(String string) {
         if (string.length() > 128) return false;
 
@@ -17,7 +19,7 @@ public class isUnique {
 
         return true;
     }
-    //isUnique that uses no additional data structure to check O(n^2)
+    //strings.arrays.isUnique that uses no additional data structure to check O(n^2)
     public static boolean isUniqueNoDS(String string) {
         if (string.length() > 128) return false;
 
@@ -29,7 +31,7 @@ public class isUnique {
 
         return true;
     }
-    //isUnique that uses a sort to achieve O(n) without additional DS.
+    //strings.arrays.isUnique that uses a sort to achieve O(n) without additional DS.
     public static boolean isUniqueOptimized(String string) {
         char[] stringToChar = string.toCharArray();
         Arrays.sort(stringToChar);

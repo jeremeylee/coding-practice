@@ -1,3 +1,5 @@
+package strings.arrays;
+
 public class PalinPerm {
 
     public static boolean checkPalinPerm(String str) {

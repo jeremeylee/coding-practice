@@ -1,6 +1,7 @@
 package linkedlists;
 
-import java.util.*;
+import java.util.HashSet;
+import linkedlists.LinkedList.*;
 
 public class LinkedListPractice {
     private static Node deleteDups(Node head) {
@@ -38,6 +39,11 @@ public class LinkedListPractice {
         }
         return current;
     }
+
+    public static boolean linkedListSearch(Node head, int find) {
+        if (head == null) return false;
+        return head.data == find || linkedListSearch(head.next, find);
+    }
     public static void display(Node head) {
         Node n = head;
         while (n != null) {
@@ -55,7 +61,19 @@ public class LinkedListPractice {
         n.next.next.next.next.next.next = new Node(2);
         deleteDupsAlternate(n);
         display(n);
+        System.out.println(linkedListSearch(n, 4));
+        LinkedList list = new LinkedList();
+        list = LinkedList.addNode(list, 3);
+        list = LinkedList.addNode(list, 4);
+        list = LinkedList.addNode(list, 5);
+        list = LinkedList.addNode(list, 6);
+        list = LinkedList.addNode(list, 6);
+        list = LinkedList.addNode(list, 6);
 
-
+        System.out.println(LinkedList.linkedListSize(list));
+        System.out.println(LinkedList.kthToLast(list, 1));
+        System.out.println(LinkedList.linkedListSizeRecursive(list.head));
+        System.out.println(LinkedList.kthToLastRecursive(list.head, LinkedList.linkedListSizeRecursive(list.head), 2));
+        LinkedList.printList(LinkedList.deleteMiddle(list));
     }
 }

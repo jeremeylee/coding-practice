@@ -15,4 +15,16 @@ public class MiddleNode {
 
         return head;
     }
+
+    public ListNode middleNode2(ListNode head) {
+        ListNode[] nodes = new ListNode[100];
+        int i = 0;
+        while (head != null) {
+            nodes[i] = head;
+            head = head.next;
+            i++;
+        }
+
+        return nodes[i/2];
+    }
 }

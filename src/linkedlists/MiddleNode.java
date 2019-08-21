@@ -16,7 +16,7 @@ public class MiddleNode {
         return head;
     }
 
-    public ListNode middleNode2(ListNode head) {
+    public ListNode middleNode1(ListNode head) {
         ListNode[] nodes = new ListNode[100];
         int i = 0;
         while (head != null) {
@@ -26,5 +26,16 @@ public class MiddleNode {
         }
 
         return nodes[i/2];
+    }
+
+    public ListNode middleNode2(ListNode head) {
+
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
     }
 }

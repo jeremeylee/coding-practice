@@ -26,5 +26,33 @@ namespace Practice.CSharp.Array
             }
             return count;
         }
+        //optimized
+        public int SubarraySumMap(int[] nums, int k)
+        {
+            int count = 0;
+            int sum = 0;
+            Dictionary<int, int> preSum = new Dictionary<int, int>();
+            preSum.Add(0, 1);
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                sum += nums[i];
+                if (preSum.ContainsKey(sum - k))
+                {
+                    count += preSum[sum - k];
+                }
+                if (preSum.ContainsKey(sum))
+                {
+                    preSum[sum]++;
+                }
+                else
+                {
+                    preSum.Add(sum, 1);
+                }
+
+
+            }
+            return count;
+        }
     }
 }

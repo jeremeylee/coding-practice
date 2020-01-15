@@ -44,5 +44,30 @@ namespace Practice.CSharp.Trees
 
             return output;
         }
+
+        public IList<IList<int>> LevelOrderRecurse(TreeNode root)
+        {
+            List<IList<int>> output = new List<IList<int>>();
+            helper(output, root, 0);
+            return output;
+        }
+
+        public void helper(IList<IList<int>> output, TreeNode root, int height)
+        {
+            if (root == null)
+            {
+                return;
+            }
+
+            if (height >= output.Count)
+            {
+                output.Add(new List<int>());
+            }
+
+            output[height].Add(root.val);
+            helper(output, root.left, height + 1);
+            helper(output, root.right, height + 1);
+            return;
+        }
     }
 }

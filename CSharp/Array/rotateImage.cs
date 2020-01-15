@@ -8,29 +8,27 @@ namespace Practice.CSharp.Array
 {
     class rotateImage
     {
-        int[][] rotateImage(int[][] a)
+        public void Rotate(int[][] matrix)
         {
-            for (int i = 0; i < a[0].Length; i++)
+            for (int row = 0; row < matrix.Length; row++)
             {
-                for (int j = i; j < a[0].Length; j++)
+                for (int col = row; col < matrix[0].Length; col++)
                 {
-                    int temp = a[i][j];
-                    a[i][j] = a[j][i];
-                    a[j][i] = temp;
+                    int temp = matrix[row][col];
+                    matrix[row][col] = matrix[col][row];
+                    matrix[col][row] = temp;
                 }
             }
 
-            for (int i = 0; i < a[0].Length; i++)
+            for (int row = 0; row < matrix.Length; row++)
             {
-                for (int j = 0; j < a[0].Length / 2; j++)
+                for (int col = 0; col < matrix[0].Length / 2; col++)
                 {
-                    int temp = a[i][j];
-                    a[i][j] = a[i][a.Length - 1 - j];
-                    a[i][a.Length - 1 - j] = temp;
+                    int temp = matrix[row][col];
+                    matrix[row][col] = matrix[row][matrix.Length - 1 - col];
+                    matrix[row][matrix.Length - 1 - col] = temp;
                 }
             }
-            return a;
         }
-
     }
 }
